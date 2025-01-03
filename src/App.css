@@ -1,0 +1,26 @@
+p{
+  color: aquamarine;
+  font-size:medium ;
+  background-color: black;
+  padding: 10px;
+  
+
+
+}
+/* .form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+} */
+
+
+.form {
+  max-width: 400px; /* Limits the form width to 400px */
+  padding: 20px; /* Adds space inside the red box */
+  background-color: #f9f9f9; /* Changes background to light gray */
+  border: 1px solid #ddd; /* Adds a soft border to the form */
+  border-radius: 10px; /* Rounds the corners of the form box */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a soft shadow */
+}
