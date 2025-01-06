@@ -12,7 +12,7 @@ function UpdateUser() {
 
     const updateUser=(e)=>{
       e.preventDefault()
-      axios.put(`http://localhost:3000/api/user/update/${id}`,{name,email,address})
+      axios.put(`https://backenddemo-jvrm.onrender.com/api/user/update/${id}`,{name,email,address})
       .then((res)=>{
         console.log(res.data)
       })
