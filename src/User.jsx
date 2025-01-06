@@ -27,39 +27,53 @@ function User() {
 
     }
   return (
-   <>
-   <h1>User</h1>
-   <Link to="/create">Create User</Link>
+    <>
+    <h1 style={{ textAlign: 'center', color: '#333', marginBottom: '20px' }}>User</h1>
+    <Link to="/create" style={{ display: 'block', marginBottom: '20px', color: '#007BFF', textDecoration: 'none', fontWeight: 'bold' }}>
+        Create User
+    </Link>
 
-   <table >
-    <thead >
-        <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Address</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        {user.map((users,index) => {
-         return(
-            <tr key={index}>
-                <td>{users.name}</td>
-                <td>{users.email}</td>
-                <td>{users.address}</td>
-                <td>
-                    <Link to={`/update/${users._id}`}>update</Link>
-                    <button onClick={()=>{
-                        deleteUser(users._id)
-                    }}>Delete</button>
-                </td>
+    <table style={{ width: '100%', borderCollapse: 'collapse', margin: '0 auto', maxWidth: '800px', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)' }}>
+        <thead>
+            <tr style={{ backgroundColor: '#007BFF', color: 'white' }}>
+                <th style={{ padding: '10px', border: '1px solid #ddd' }}>Name</th>
+                <th style={{ padding: '10px', border: '1px solid #ddd' }}>Email</th>
+                <th style={{ padding: '10px', border: '1px solid #ddd' }}>Address</th>
+                <th style={{ padding: '10px', border: '1px solid #ddd' }}>Action</th>
             </tr>
-        )
-    }
-        )}
-    </tbody>
-   </table>
-   </>
+        </thead>
+        <tbody>
+            {user.map((users, index) => (
+                <tr key={index} style={{ backgroundColor: index % 2 === 0 ? '#f9f9f9' : '#fff' }}>
+                    <td style={{ padding: '10px', border: '1px solid #ddd' }}>{users.name}</td>
+                    <td style={{ padding: '10px', border: '1px solid #ddd' }}>{users.email}</td>
+                    <td style={{ padding: '10px', border: '1px solid #ddd' }}>{users.address}</td>
+                    <td style={{ padding: '10px', border: '1px solid #ddd' }}>
+                        <Link to={`/update/${users._id}`} style={{ marginRight: '10px', color: '#007BFF', textDecoration: 'none', fontWeight: 'bold' }}>
+                            Update
+                        </Link>
+                        <button
+                            onClick={() => deleteUser(users._id)}
+                            style={{
+                                padding: '5px 10px',
+                                color: 'white',
+                                backgroundColor: '#d9534f',
+                                border: 'none',
+                                borderRadius: '4px',
+                                cursor: 'pointer',
+                                fontWeight: 'bold',
+                                transition: 'background-color 0.3s ease',
+                            }}
+                        >
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            ))}
+        </tbody>
+    </table>
+</>
+
   )
 }
 
